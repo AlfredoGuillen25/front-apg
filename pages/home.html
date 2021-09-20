@@ -1,0 +1,30 @@
+<div ng-controller="apgController">
+      <div ng-include="'pages/menu.html'"></div>
+      <!--crear empleados-->
+      <div class="container" ng-if="form">
+      <form>
+        <div class="mb-3">
+          <label for="matricula" class="form-label">Matrícula</label>
+          <input type="text" class="form-control" id="matricula" ng-model="empleado.matricula" maxlength="10" placeholder="Ejemplo: SCRA254100">
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" ng-model="empleado.nombre" maxlength="50">
+        </div>
+        <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" ng-model="empleado.apellidos" maxlength="50">
+        </div>
+        <div class="mb-3">
+            <label for="sueldo" class="form-label">Sueldo</label>
+            <input type="text" class="form-control" id="sueldo" ng-model="empleado.sueldo" maxlength="10" placeholder="12000.00">
+          </div>  
+        <button type="submit" class="btn btn-primary" ng-click="agregar();">{{titleBtn}}</button>
+        <button type="submit" class="btn btn-primary" ng-click="mostrar();">Listado</button>
+        <button type="submit" class="btn btn-primary" ng-click="limpiar();">Limpiar</button>
+      </form>
+    </div>
+    <div ng-if="table">
+        <div ng-include="'pages/listado.html'"></div>
+    </div>
+</div>

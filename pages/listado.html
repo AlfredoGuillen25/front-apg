@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table" ng-if="count">
+        <thead>
+          <tr>
+            <th scope="col">Matrícula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Sueldo</th>
+            <th scope="col">Fecha de Registro</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="empleado in empleados">
+            <th scope="row">{{empleado.matricula}}</th>
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellidos}}</td>
+            <td>{{empleado.sueldo.toFixed(2)}}</td>
+            <td>{{empleado.fechaAlta}}</td>
+            <td><button class="btn btn-sm btn-primary" ng-click="editar(empleado)">Modificar</button><button class="btn btn-sm btn-danger m-2" ng-click="eliminar(empleado.matricula)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center" ng-if="!count">
+        <h2>No hay empleados</h2>
+      </div>
+</div>
